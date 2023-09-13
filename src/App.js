@@ -1,24 +1,49 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import Footer from './components/Footer';
+import MovieBox from './components/MovieBox';
 
+const API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=3d393b05661d08facd3dcea238d2e4ff";
+const API_SEARCH = "https://api.themoviedb.org/3/search/movie?api_key=3d393b05661d08facd3dcea238d2e4ff&query";
 function App() {
+
+  const [movies, setMovies] = useState([]);
+  const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    fetch (API_URL)
+    .then((res) => res.json())
+    .then(data => {
+      console.log(data);
+      const ans = data.results;
+      setMovies(ans.slice(0, 10));
+    })
+  }, []);
+
+  const searchMovie = async(e) => {
+    e.preventDefault();
+    try{
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=3d393b05661d08facd3dcea238d2e4ff&query`
+    } catch(e) {
+
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <form onSubmit={searchMovie}>
+        <input type="search" 
+          className='search-input' 
+          placeholder='what do you want to watch?'
+        />
+        {/* icon */}
+      </form>
+      <div className='Container'>
+      {movies.map((movieReq) => 
+      <MovieBox key={movieReq.id} {...movieReq}/>)}
+      </div>
+      <Footer />
+    </>
   );
 }
 

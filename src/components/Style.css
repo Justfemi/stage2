@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* MovieBox */
+.movie-card {
+  /* border: solid #000; */
+  width: 400px;
+  height: 550px;
+}
+
+.movie-card div {
+  width: 400px;
+  height: 400px;
+}
+
+.movie-card div img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+}
+
+/* Footer */
+.footer {
+  border: solid red;
+}
