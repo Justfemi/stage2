@@ -15,6 +15,9 @@ const Footer = () => {
         <p>Privacy & Policy</p>
         <p>Press Room</p>
       </div>
+      <div>
+        <p> &copy; 2023 MovieBox by Ajibade Olufemi</p>
+      </div>
     </div>
   )
 }
