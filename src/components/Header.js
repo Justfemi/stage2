@@ -14,7 +14,7 @@ const Header = () => {
 
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetch (API_URL)
@@ -109,7 +109,7 @@ const Header = () => {
                   </div>
                 </div>
               ) : (
-                <h2></h2>
+                <h2>....</h2>
               )}
             </div>
           </>
