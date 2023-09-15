@@ -30,35 +30,20 @@ const MovieDetails = () => {
     })
   }, []);
 
-  // const getMovieDetails = () => {
-  //   fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=3d393b05661d08facd3dcea238d2e4ff`)
-  //   .then(res => {
-  //     if(res.ok) {
-  //       return res.json();
-  //     } else {
-  //       console.log('res error');
-  //     }
-  //   })
-  //   .then(data => {
-  //     console.log(data);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   })
-  // }
-
   return (
     <>
       <header className="colored-header">
-        <a href="/">
+        <Link to="/">
           <img src={ logo } alt="movie app logo"/>
-        </a>
+        </Link>
 
         <Link to="/">
         <p>back to home</p>
         </Link>
       </header>
-      <div className="content">
+      <div className="content" style={{
+        backgroundImage: `url(API_IMG + ${movie.backdrop_path})`
+      }}>
         <div className='image-container'>
           <img src={API_IMG + movie.poster_path} alt="movie poster" data-testid="movie-poster" />
         </div>
@@ -67,7 +52,7 @@ const MovieDetails = () => {
           <p data-testid="movie-overview" className='movie-overview'>
             {movie.overview}
           </p>
-          <p data-testid="movie-runtime" className='movie-time'>{movie.runtime}</p>
+          <p data-testid="movie-runtime" className='movie-time'>{movie.runtime} minutes</p>
           <p data-testid="movie-release-date" className='movie-date'>{movie.release_date}</p>
         </div>
       </div>

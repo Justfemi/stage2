@@ -105,8 +105,8 @@ input::placeholder {
 form .search-icon {
   position: absolute;
   font-size: 20px;
-  top: 35px;
-  right: 5px;
+  top: 15px;
+  right: 10px;
 }
 
 .movie-container {
@@ -209,4 +209,10 @@ form .search-icon {
 .footer .text h5 {
   font-size: 17px;
   margin-left: 30px;
+}
+
+@media only screen and (max-width: 789px) {
+  .movie-container .heading {
+    flex-direction: column;
+  }
 }
