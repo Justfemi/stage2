@@ -16,9 +16,9 @@ const Footer = () => {
         <h5>Privacy & Policy</h5>
         <h5>Press Room</h5>
       </div>
-      <div>
-        <h5> &copy; 2023 MovieBox by Ajibade Olufemi</h5>
-      </div>
+      {/* <div>
+        <h6 className='copy'> &copy; 2023 MovieBox by Ajibade Olufemi</h6>
+      </div> */}
     </div>
   )
 }

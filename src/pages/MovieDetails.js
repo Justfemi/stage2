@@ -2,7 +2,6 @@ import React, { useState, useEffect }from 'react';
 import { Link, useParams } from 'react-router-dom'
 import './style.css';
 import logo from '../assets/Logo.svg';
-import Footer from '../components/Footer';
 
 const MovieDetails = () => {
   const API_IMG = "https://image.tmdb.org/t/p/w500/";
@@ -19,16 +18,13 @@ const MovieDetails = () => {
       }
     })
     .then(data => {
-      console.log(data);
-      // const newMovie = data.find((item) => 
-      //   item.id === id);
-      //   setMovie(newMovie); 
+      // console.log(data);
       setMovie(data);
     })
     .catch((err) => {
       console.log(err);
     })
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -41,9 +37,14 @@ const MovieDetails = () => {
         <p>back to home</p>
         </Link>
       </header>
-      <div className="content" style={{
-        backgroundImage: `url(API_IMG + ${movie.backdrop_path})`
-      }}>
+      <div className="content" 
+        // style={{
+        // backgroundImage: 'url(https://image.tmdb.org/t/p/original/5mzr6JZbrqnqD8rCEvPhuCE5Fw2.jpg)',
+        // backgroundImage: 'url(${https://image.tmdb.org/t/p/original/ + movie.backdrop_path})',
+        // backgroundPosition: 'center',
+        // backgroundRepeat: 'no-repeat'
+      //  }}
+      >
         <div className='image-container'>
           <img src={API_IMG + movie.poster_path} alt="movie poster" data-testid="movie-poster" />
         </div>
@@ -56,7 +57,6 @@ const MovieDetails = () => {
           <p data-testid="movie-release-date" className='movie-date'>{movie.release_date}</p>
         </div>
       </div>
-      <Footer />
     </>
   )
 }

@@ -190,6 +190,7 @@ form .search-icon {
 }
 
 /* Footer */
+
 .footer {
   text-align: center;
   margin: 20px auto;
@@ -207,12 +208,16 @@ form .search-icon {
 }
 
 .footer .text h5 {
-  font-size: 17px;
+  font-size: 15px;
   margin-left: 30px;
 }
 
-@media only screen and (max-width: 789px) {
+.footer .copy {
+  font-size: 10px;
+}
+
+/* @media only screen and (max-width: 789px) {
   .movie-container .heading {
     flex-direction: column;
   }
-}
+} */
