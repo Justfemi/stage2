@@ -6,7 +6,7 @@ import imdb from '../assets/imdb.svg';
 import tomato from '../assets/tomato.svg';
 import MovieBox from './MovieBox';
 import { AiOutlineRight } from 'react-icons/ai';
-// import { BiSearch } from 'react-icons/bi';
+import { BiSearch } from 'react-icons/bi';
 
 const API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=3d393b05661d08facd3dcea238d2e4ff";
 
@@ -58,13 +58,15 @@ const Header = () => {
           </a>
 
           <form onSubmit={searchMovie}>
-            <input type="search" 
-              className='search-input' 
-              placeholder='What do you want to watch?'
-              name='query'
-              value={query} onChange={handleChange}
-            />
-            {/* <BiSearch className='search-icon'/> */}
+            <div>
+              <input type="search" 
+                className='search-input' 
+                placeholder='What do you want to watch?'
+                name='query'
+                value={query} onChange={handleChange}
+              />
+              <BiSearch className='search-icon'/>
+            </div>
           </form>
         </header>
 

@@ -80,12 +80,12 @@ header img {
   width: 150px;
 }
 
-form {
+form div {
   position: relative;
   width: 500px;
 }
 
-form input {
+form div input {
   background: transparent;
   padding: 10px;
   width: 100%;
@@ -93,12 +93,13 @@ form input {
   border-radius: 5px;
   border: .2px solid #fff;
   color: #fff;
-  font-size: 15px;
+  font-size: 17px;
   outline: none;
 }
 
 input::placeholder {
   color: #fff;
+  font-size: 15px;
 }
 
 form .search-icon {

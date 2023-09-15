@@ -5,7 +5,7 @@ import logo from '../assets/Logo.svg';
 import Footer from '../components/Footer';
 
 const MovieDetails = () => {
-
+  const API_IMG = "https://image.tmdb.org/t/p/w500/";
   const [movie, setMovie] = useState([]);
   const { id } = useParams();
 
@@ -20,9 +20,10 @@ const MovieDetails = () => {
     })
     .then(data => {
       console.log(data);
-      const newMovie = data.find((item) => 
-        item.id === id);
-        setMovie(newMovie); 
+      // const newMovie = data.find((item) => 
+      //   item.id === id);
+      //   setMovie(newMovie); 
+      setMovie(data);
     })
     .catch((err) => {
       console.log(err);
@@ -59,14 +60,14 @@ const MovieDetails = () => {
       </header>
       <div className="content">
         <div className='image-container'>
-          <img src={movie.poster_path} alt="movie poster" data-testid="movie-poster" />
+          <img src={API_IMG + movie.poster_path} alt="movie poster" data-testid="movie-poster" />
         </div>
         <div className='text-container'>
           <h1 data-testid="movie-title" className='movie-title'>{movie.title}</h1>
           <p data-testid="movie-overview" className='movie-overview'>
             {movie.overview}
           </p>
-          <p data-testid="movie-runtime" className='movie-time'>100 minutes</p>
+          <p data-testid="movie-runtime" className='movie-time'>{movie.runtime}</p>
           <p data-testid="movie-release-date" className='movie-date'>{movie.release_date}</p>
         </div>
       </div>
