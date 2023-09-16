@@ -1,12 +1,3 @@
-API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=3d393b05661d08facd3dcea238d2e4ff"
-API_IMG = "https://image.tmdb.org/t/p/w500/"
-API_SEARCH = "https://api.themoviedb.org/3/search/movie?api_key=3d393b05661d08facd3dcea238d2e4ff&query"
-
-<!-- apikey = "3d393b05661d08facd3dcea238d2e4ff"; -->
-
-
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
